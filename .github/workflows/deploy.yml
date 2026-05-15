@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          GITHUB_PAGES_BASE: /flex-bento/
+          GITHUB_PAGES_BASE: ${{ github.event.repository.name == 'gonsakon.github.io' && '/' || '/flex-bento/' }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
